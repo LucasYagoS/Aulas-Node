@@ -47,7 +47,7 @@ const createUser = (email, password, nickname) => {
 createUser("Lucas@lucas", "12356", "LucasYago");
 createUser("Lucas@lucas", "12356", "LucasYago");
 createUser("Lucas@lucas", "12356", "LucasYago");
-// console.log(repository);
+
 
 const findUserById = (id) => {
   const user = repository.find((user) => user.Id === id);
@@ -129,3 +129,14 @@ const updatePost = (id, postId, newContent) => {
 
 // console.log(updatePost(5, 1, "Hello world"));
 // console.log(updateUser("Lucas@lucas", "54321", "YagoLucas", 2));
+
+
+cents = [135151, 41351351 , 5135135, 6123 , 712 , 81245]
+const brl = cents.map((value) => {
+  
+  return (value / 100).toLocaleString("pt-BR", {style: 'currency', currency: 'BRL' });
+  
+})
+
+// console.log(brl);
+console.log(repository[1])
