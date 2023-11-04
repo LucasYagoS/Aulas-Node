@@ -40,7 +40,7 @@ function updateStudentRepository(code, data) {
     if (data.class !== undefined) {
       repository[index].class = data.class;
     } else {
-        repository[index].class = undefined
+      repository[index].class = undefined;
     }
     if (data.status !== undefined) {
       repository[index].status = data.status;
@@ -82,7 +82,7 @@ createStudentRepository({
 
 updateStudentRepository(2, {
   name: "Fulano",
-  
+
   document: "123.123.123-00",
   status: "pendente",
 });
