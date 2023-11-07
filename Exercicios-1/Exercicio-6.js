@@ -47,7 +47,7 @@ class Repository {
       Password: password,
       Nickname: nickname,
     });
-    return repository;
+    return this.repository;
   }
 
   createPost(content, id) {
@@ -74,7 +74,7 @@ class Repository {
     if (!index) {
       return "User not found";
     }
-    repository.splice(index, 1);
+    this.repository.splice(index, 1);
   }
 
   deletePost(id, postId) {
