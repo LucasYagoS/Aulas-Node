@@ -113,7 +113,7 @@ class User {
 class Post{
   constructor(content) {
     this.Content = content;
-    this.Id = idCounter++;
+    this.Id = postId++;
     this.createdAt = new Date();
   }
 }
@@ -121,6 +121,11 @@ class Post{
 const bancoDeDados = new Repository(dataBase);
 
 bancoDeDados.postUser("lucas@lucas", "12345", "Yago")
+bancoDeDados.postUser("lucas@lucas", "12345", "Yago")
+bancoDeDados.postUser("lucas@lucas", "12345", "Yago")
 
-console.log(bancoDeDados.createPost("Hello World!", 0))
+bancoDeDados.createPost("cavalo", 1)
+
+
+console.log(bancoDeDados.repository[1]);
 
