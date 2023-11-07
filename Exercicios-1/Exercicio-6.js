@@ -50,12 +50,13 @@ class Repository {
     return repository;
   }
 
-  createPost(post, id) {
+  createPost(content, id) {
     const user = this.repository.find((user) => user.Id === id);
     if (!user) {
       return "User not found";
     }
-    user.Posts.push({ Content: post, Id: postId++, createdAt: new Date() });
+    const post = new  Post(content);
+    user.Posts.push(post);
     return user;
   }
 
@@ -109,9 +110,17 @@ class User {
   }
 }
 
+class Post{
+  constructor(content) {
+    this.Content = content;
+    this.Id = idCounter++;
+    this.createdAt = new Date();
+  }
+}
+
 const bancoDeDados = new Repository(dataBase);
 
 bancoDeDados.postUser("lucas@lucas", "12345", "Yago")
 
-console.log(bancoDeDados.repository)
+console.log(bancoDeDados.createPost("Hello World!", 0))
 
