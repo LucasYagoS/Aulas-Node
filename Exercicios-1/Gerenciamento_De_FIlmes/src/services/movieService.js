@@ -27,7 +27,7 @@ class MovieService {
         if(!foundMovie) return "movie not found"
         const newData = new this.movie(tittle, description, realase, director, genre)
         newData.id = movieId
-        this.repository.saveUpdatedMovie(movieId, foundMovie, newData)
+        this.repository.saveUpdatedMovie(foundMovie, newData)
     }
     
     removeMovieById(movieId){
